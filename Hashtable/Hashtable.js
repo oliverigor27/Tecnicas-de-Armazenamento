@@ -1,35 +1,47 @@
-let nome = "Mia";
-let soma = 0;
+class HashTable {
 
-for(let i = 0; i < nome.length; i++) {
-
-    soma += nome.charCodeAt(i);
-
-}
-
-console.log(soma);
-
-function addNameOnTable(data) {
-    let arr = [];
-    let one, two, three, result, resuult, soma = 0;
-
-    for(let i = 0; i < data.length; i++) {
-        soma += data.charCodeAt(i);
+    constructor() {
+        this.table = new Array(100);
+        this.size = 0;
     }
 
-    one = (soma / 11);
-    two = one.toFixed();
-    three = one - two;
-    result = three * 11;
-    resuult = Math.round(result);
+    #hash(data) {
+        let hash = 0;
+        let result;
 
-    arr[resuult] = data;
+        for(let i = 0; i < data.length; i++) {
+            hash += data.charCodeAt(i);
+        };
 
-    console.log(arr);
+        result = (hash % this.table.length) / 2
+        
+        return result.toFixed();
+    }
+
+    setHashTable(key, value) {
+        let index = this.#hash(key);
+        this.table[index] = [key, value];
+        this.size++;
+    }
+
+    getAllHashTAble() {
+        return this.table;
+    }
+
+    getHashTable(key) {
+        let target = this.#hash(key);
+        return this.table[target];
+    }
+
+    getsize() {
+        return this.size;
+    }
+
 }
 
-addNameOnTable("Mia");
-addNameOnTable("Ana");
-addNameOnTable("Caio");
+const hash = new HashTable();
 
+hash.setHashTable("Mia", "555-386-923");
+hash.setHashTable("Igor", "555-386-923");
 
+console.log(hash.getsize());
