@@ -45,3 +45,4 @@ hash.setHashTable("Mia", "555-386-923");
 hash.setHashTable("Igor", "555-386-923");
 
 console.log(hash.getsize());
+console.log(hash.getHashTable("Igor"));
