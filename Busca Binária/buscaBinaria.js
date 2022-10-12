@@ -3,7 +3,6 @@ let vet = [10,12,16,18,21,25,30];
 function teste(vetor, dado) {
     let inicio = 0; final = vetor.length - 1;
     let result = -1;
-    let obj;
 
     
     while(inicio <= final) {
