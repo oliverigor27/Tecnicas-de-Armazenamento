@@ -6,7 +6,7 @@ function teste(vetor, dado) {
 
     
     while(inicio <= final) {
-        let meio = (inicio + final) / 2;
+        let meio = Math.ceil((inicio + final) / 2);
         if(vetor[meio] == dado) {
             return result = {
                 index: meio,
