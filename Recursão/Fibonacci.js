@@ -1,15 +1,11 @@
 class Fibonacci {
-    constructor() {
-        this.fibo(20);
-    }
+    fatorial(data) {
+        if(data === 1) return 1;
 
-    fibo(dta) {
-        if(dta < 2) return dta;
-
-        return console.log(this.fibo(dta - 1) + this.fibo(dta - 2));
+        return data * this.fatorial(data - 1);
     }
 }
 
 const x = new Fibonacci();
 
-x;
+console.log(x.fatorial(5));
