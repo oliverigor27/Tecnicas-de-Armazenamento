@@ -24,4 +24,4 @@ function teste(vetor, dado) {
     return result;
 }
 
-console.log(teste(vet, 10));
+console.log(teste(vet, 25));

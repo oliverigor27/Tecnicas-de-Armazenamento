@@ -8,4 +8,4 @@ class Fibonacci {
 
 const x = new Fibonacci();
 
-console.log(x.fatorial(5));
+console.log(x.fatorial(3));
